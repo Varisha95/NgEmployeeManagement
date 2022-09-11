@@ -2,17 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Employee } from '../../employee/employee';
 
-const baseUrl = "https://crudcrud.com/api";
-const uniqueIdentifier = "/425a369294cb49a7b2f4b53e0d4357e4";
+export const baseUrl = "https://crudcrud.com/api";
+export const uniqueIdentifier = "/fcd682b675bd40c89076c4c586c22d77";
 const resource = "/employees"
 @Injectable({
   providedIn: 'root'
 })
 export class HttpClientService {
-
-
-
-
 
   constructor(private httpClient: HttpClient) { }
 

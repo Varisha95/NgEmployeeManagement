@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
-import { User } from './user';
+import { User } from 'src/app/authentication/user';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
-
+  
   users: User[] = [
-    { username: "Varisha Ajaz", password: '1' },
-    { username: "User2", password: '2' },
-    { username: "User3", password: '3' }]
+    { username: "Varisha Ajaz", password: '1' }]
 
   user: object[]
 

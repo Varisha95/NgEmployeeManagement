@@ -4,15 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AddEmployeeComponent } from './employee/employee-detail/add-employee.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './authentication/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import { SignupComponent } from './signup/signup.component';
+import { SignupComponent } from './authentication/signup/signup.component';
 import { EmployeeModule } from './employee/employee.module';
 
 
@@ -29,7 +28,7 @@ import { EmployeeModule } from './employee/employee.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot() ,// ToastrModule added
+    ToastrModule.forRoot(),// ToastrModule added
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,

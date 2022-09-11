@@ -12,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 export class EmployeeGridComponent implements OnInit {
 
   employees: Employee[]
-  constructor(private httpService: HttpClientService, private router: Router, private toastr:ToastrService) { }
+  constructor(private httpService: HttpClientService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.getAllEmployeesList();
@@ -24,18 +24,22 @@ export class EmployeeGridComponent implements OnInit {
     this.router.navigate(['/home/addemployee', employee._id])
   }
 
-  getAllEmployeesList(){
+  getAllEmployeesList() {
     this.httpService.getEmployees().subscribe(response => {
       this.employees = response;
     })
   }
+
   deleteEmployee(employee: Employee) {
 
     this.httpService.deleteEmployee(employee).subscribe(response => {
-      this.toastr.show("Employee Deleted Successfully!","Deleted",{
-        timeOut: 1000,
+      this.toastr.show("Employee Deleted Successfully!", "Deleted", {
+        timeOut: 500,
       })
-      this.getAllEmployeesList();
+      setTimeout(() => {
+        this.getAllEmployeesList();
+      }, 500);
+     
     })
   }
 }

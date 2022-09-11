@@ -1,0 +1,46 @@
+<div class="col-md-6">
+  <h2 class="text-center">Employee Details</h2>
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" id="ngForm" #empDetailForm="ngForm">
+    <div class="form-group">
+
+      <div class="form-group">
+        <label for="emp">Employee Id:</label>
+        <input formControlName="empId" placeholder="Employee Id" name="Employee Id" class="form-control" id="employeeid"
+        [ngClass]="{ 'is-invalid': submitted && f.empId.errors }" />
+        <div *ngIf="submitted && f.empId.errors" class="invalid-feedback">
+          <div *ngIf="f.empId.errors.required">Enter Employee Id</div>
+      </div>
+      </div>
+
+      <label class="form-label" for="name">Name:</label>
+      <input type="name" formControlName="name" placeholder="Name" name="name" class="form-control" id="name"
+      [ngClass]="{ 'is-invalid': submitted && f.name.errors }"/>
+      <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+        <div *ngIf="f.name.errors.required">Enter Employee Name</div>
+    </div>
+    </div>
+  
+    <div class="form-group">
+      <label class="form-label" for="designation">Designation:</label>
+      <input formControlName="designation" placeholder="Designation" name="designation" class="form-control" id="designation"
+      [ngClass]="{ 'is-invalid': submitted && f.designation.errors }"/>
+      <div *ngIf="submitted && f.designation.errors" class="invalid-feedback">
+        <div *ngIf="f.designation.errors.required">Enter Employee Designation</div>
+    </div>
+    </div>
+
+    <div class="form-group">
+      <label for="designation">Salary:</label>
+      <input formControlName="salary" placeholder="Enter employee Salary" name="salary" class="form-control" id="salary"
+      [ngClass]="{ 'is-invalid': submitted && f.salary.errors }"/>
+      <div *ngIf="submitted && f.salary.errors" class="invalid-feedback">
+        <div *ngIf="f.salary.errors.required">Enter Employee Salary</div>
+    </div>
+    </div>
+  
+    
+  
+    <button class="btn btn-success">{{buttonName}}</button>
+  </form>
+  </div>
+  
