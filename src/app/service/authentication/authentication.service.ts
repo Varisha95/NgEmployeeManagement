@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
+import { User } from './user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
 
-  users = [
-    { username: "Varisha Ajaz", password: 1 },
-    { username: "User2", password: 2 },
-    { username: "User3", password: 3 }]
+  users: User[] = [
+    { username: "Varisha Ajaz", password: '1' },
+    { username: "User2", password: '2' },
+    { username: "User3", password: '3' }]
 
   user: object[]
 
   constructor() { }
 
   authenticateUser(credentials) {
-    debugger
     this.user = this.users.filter(
       items => items.username == credentials.username && items.password == credentials.password
     );
@@ -29,8 +29,8 @@ export class AuthenticationService {
     }
   }
 
-  registerUser(user){
-this.users.push({username: user.username, password:user.password});
-console.log(this.users,'users')
+  registerUser(user) {
+    this.users.push({ username: user.username, password: user.password });
+    console.log(this.users, 'users')
   }
 }

@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { SignupComponent } from './signup/signup.component';
+import { EmployeeModule } from './employee/employee.module';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { SignupComponent } from './signup/signup.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    EmployeeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

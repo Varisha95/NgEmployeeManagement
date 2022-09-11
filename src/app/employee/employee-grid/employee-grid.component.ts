@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Employee } from '../employee-detail/employee';
+import { Employee } from '../employee';
 import { HttpClientService } from '../../service/http-client/http-client.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-employee-grid',
@@ -11,7 +12,7 @@ import { HttpClientService } from '../../service/http-client/http-client.service
 export class EmployeeGridComponent implements OnInit {
 
   employees: Employee[]
-  constructor(private httpService: HttpClientService, private router: Router) { }
+  constructor(private httpService: HttpClientService, private router: Router, private toastr:ToastrService) { }
 
   ngOnInit() {
     this.getAllEmployeesList();
@@ -31,6 +32,9 @@ export class EmployeeGridComponent implements OnInit {
   deleteEmployee(employee: Employee) {
 
     this.httpService.deleteEmployee(employee).subscribe(response => {
+      this.toastr.show("Employee Deleted Successfully!","Deleted",{
+        timeOut: 1000,
+      })
       this.getAllEmployeesList();
     })
   }

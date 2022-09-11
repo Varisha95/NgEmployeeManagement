@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Employee } from './employee';
+import { Employee } from '../employee';
 import { HttpClientService } from '../../service/http-client/http-client.service';
 import { MyToastrService } from '../../service/ToastrService/toastr.service';
 
@@ -68,8 +68,8 @@ export class AddEmployeeComponent implements OnInit {
       this.httpClientService.updateEmployee(_id, this.employee).subscribe(response => {
 
         // this.toastr.showToast('Title', 'Employee Updated Successfully','success');
-        this.toastr.success('everything is broken', 'Major Error', {
-          timeOut: 3000,
+        this.toastr.success('Employee Updated Successfully', 'Updated', {
+          timeOut: 1000,
           positionClass: 'toast-top-right',
         });
       })
@@ -77,10 +77,15 @@ export class AddEmployeeComponent implements OnInit {
     else {
       delete this.employee._id;
       this.httpClientService.createEmployee(this.employee).subscribe(response => {
+        
         // this.toastr.showToast('Title', 'Employee Added Successfully','success');
         this.toastr.success('everything is broken', 'Major Error', {
-          timeOut: 3000,
+          timeOut: 500,
         });
+        setTimeout(() => {
+          this.router.navigate(['/home/viewemployee'])
+        }, 1000);
+        
       })
     }
   }
