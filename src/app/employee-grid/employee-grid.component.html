@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Employee Id</th>
+      <th scope="col">Employee Name</th>
+      <th scope="col">Employee Designation</th>
+      <th scope="col">Employee Salary</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of employees">
+      <td>{{item.empId}}</td> 
+      <td>{{item.name}}</td>
+      <td>{{item.designation}}</td>
+      <td>{{item.salary}}</td>
+      <td><button type="button" class="btn btn-primary" (click)="goToEmployeeDetail(item)">Edit</button></td>
+      <td><button type="button" class="btn btn-primary" (click)="deleteEmployee(item)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
