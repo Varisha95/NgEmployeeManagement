@@ -3,9 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Employee } from '../employee/employee';
-import { HttpClientService } from '../service/http-client/http-client.service';
-import { MyToastrService } from '../service/ToastrService/toastr.service';
+import { Employee } from './employee';
+import { HttpClientService } from '../../service/http-client/http-client.service';
+import { MyToastrService } from '../../service/ToastrService/toastr.service';
 
 @Component({
   selector: 'app-add-employee',

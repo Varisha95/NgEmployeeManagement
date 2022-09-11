@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Employee } from '../../employee/employee';
+import { Employee } from '../../employee/employee-detail/employee';
 
 const baseUrl = "https://crudcrud.com/api";
 const uniqueIdentifier = "/425a369294cb49a7b2f4b53e0d4357e4";

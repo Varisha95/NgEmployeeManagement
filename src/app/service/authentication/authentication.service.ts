@@ -31,6 +31,6 @@ export class AuthenticationService {
 
   registerUser(user){
 this.users.push({username: user.username, password:user.password});
-console.log()
+console.log(this.users,'users')
   }
 }
